@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ItemStyles = styled.div`
   background: white;
   border: 1px solid var(--offWhite);
-  box-shadow: var(--bs);
+  box-shadow: var(--boxShadow);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -18,6 +18,7 @@ const ItemStyles = styled.div`
     flex-grow: 1;
     padding: 0 3rem;
     font-size: 1.5rem;
+    margin-top: 1rem;
   }
   .buttonList {
     display: grid;
