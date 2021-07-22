@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import '../styles/nprogress.css';
+import '../styles/reset.css';
 import { ApolloProvider } from '@apollo/client';
 import Layout from '../components/layout/Layout';
 import withData from '../lib/withData';

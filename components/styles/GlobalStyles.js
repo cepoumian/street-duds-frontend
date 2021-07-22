@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     --grey: #3a3a3a;
     --gray: var(--grey);
     --lightGrey: #e1e1e1;
-    --lightGray: var(----lightGrey);
+    --lightGray: var(--lightGrey);
     --offWhite: #ededed;
 
     --maxWidth: 1000px;
@@ -48,4 +48,10 @@ export const GlobalStyles = createGlobalStyle`
   button {
     font-family: 'radnika_next' ,---apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
+
+/*   h1 {
+    margin: 0;
+    padding: 0;
+  } */
+
 `;

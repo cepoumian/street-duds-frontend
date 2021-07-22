@@ -10,11 +10,11 @@ export default function Header() {
         <LogoStyles>
           <Link href="/">Street Duds</Link>
         </LogoStyles>
+        <Nav />
       </div>
       <div className="sub-bar">
         <p>Search</p>
       </div>
-      <Nav />
     </HeaderStyles>
   );
 }
