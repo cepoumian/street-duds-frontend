@@ -2,9 +2,11 @@ import { useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import '../styles/nprogress.css';
+import { ApolloProvider } from '@apollo/client';
 import Layout from '../components/layout/Layout';
+import withData from '../lib/withData';
 
-export default function App({ Component, pageProps }) {
+function MyApp({ Component, pageProps, apollo }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -23,8 +25,21 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ApolloProvider client={apollo}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ApolloProvider>
   );
 }
+
+MyApp.getInitialProps = async function ({ Component, ctx }) {
+  let pageProps = {};
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+  pageProps.query = ctx.query;
+  return { pageProps };
+};
+
+export default withData(MyApp);
