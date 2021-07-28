@@ -4,7 +4,7 @@ export const LogoStyles = styled.h1`
   font-size: 4rem;
   position: relative;
   z-index: 2;
-  background: var(--red, red);
+  background: var(--fire, red);
   transform: skew(-7deg);
   margin: 2rem 0 2rem 2rem;
 

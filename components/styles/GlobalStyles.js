@@ -10,6 +10,12 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     --red: #ff0000;
+    --fire:linear-gradient(
+        to right,
+        #ff3019 0%,
+        #ff8819 85%,
+        #e2b04a 100%
+      );
     --black: #393939;
     --grey: #3a3a3a;
     --gray: var(--grey);
