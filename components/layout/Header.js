@@ -8,7 +8,7 @@ export default function Header() {
     <HeaderStyles>
       <div className="bar">
         <LogoStyles>
-          <Link href="/">Street Duds</Link>
+          <Link href="/">Hot Duds</Link>
         </LogoStyles>
         <Nav />
       </div>
