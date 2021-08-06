@@ -30,7 +30,12 @@ export default function DeleteProduct({ id, children }) {
   };
 
   return (
-    <button type="button" disabled={loading} onClick={deleteProductHandler}>
+    <button
+      type="button"
+      style={{ cursor: 'pointer' }}
+      disabled={loading}
+      onClick={deleteProductHandler}
+    >
       {children}
     </button>
   );

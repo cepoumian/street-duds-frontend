@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import '../styles/nprogress.css';
 import '../styles/reset.css';
 import { ApolloProvider } from '@apollo/client';
+import CartStateProvider from '../lib/context/CartStateProvider';
 import Layout from '../components/layout/Layout';
 import withData from '../lib/withData';
 
@@ -16,20 +17,22 @@ function MyApp({ Component, pageProps, apollo }) {
 
     router.events.on('routeChangeStart', startProgressBar);
     router.events.on('routeChangeComplete', completeProgressBar);
-    Router.events.on('routeChangeError', completeProgressBar);
+    router.events.on('routeChangeError', completeProgressBar);
 
     return () => {
       router.events.off('routeChangeStart', startProgressBar);
       router.events.off('routeChangeComplete', completeProgressBar);
-      Router.events.off('routeChangeError', completeProgressBar);
+      router.events.off('routeChangeError', completeProgressBar);
     };
   }, []);
 
   return (
     <ApolloProvider client={apollo}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <CartStateProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </CartStateProvider>
     </ApolloProvider>
   );
 }
